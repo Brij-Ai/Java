@@ -9,7 +9,7 @@ const mySym = Symbol('key1') //symbol declartion
 const JsUser = {
     name:"brij",
     age:18,
-    [mySym]:"my kEy 01",
+    [mySym]:"mykEy01",
     loction:"up",
     email:"brijk@gmail.com",
     lastLogIndays:['monday','sunday'],
@@ -30,7 +30,7 @@ console.log("after changes: ",JsUser.email)
 
 // creating a function of abject
     JsUser.greatin = function(){
-        console.log(`welcome ! , ${this["full name"]}`)
+        console.log(`welcome !,${this["full name"]}`)
     }
 console.log(JsUser.greatin())
 
