@@ -26,4 +26,23 @@ console.log(trget)
 
 console.log(Object.keys(tinderUser)) // it store key value in array
 console.log(Object.values(tinderUser)) // volues
-console.log(Object.entries(tinderUser)) ///
+console.log(Object.entries(tinderUser)) 
+
+
+// 03 lecture of object 
+// Object De-structure and JSON API
+
+const couresInst = {
+    price:99,
+    InsName:'dell Riyo'
+}
+// we can this alies name 
+const {price:p} = couresInst
+console.log(p)
+
+// intro Of JSON
+// {
+//     "name":"google",
+//     "price": "freee"
+// }
+
