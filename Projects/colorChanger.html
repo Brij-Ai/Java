@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+    <div class="containter" style="color: aliceblue;">
+        <h1>Please click start button then see magic !</h1>
+        <button id="start">start</button>
+        <button id="stop">stop</button>
+    </div>
+</body>
+<script>
+    const randomColor = function(){
+        const hax = '0123456789ABCDEF'
+        let color = '#'
+        for(let i = 0; i<6; i++){
+            color += hax[Math.floor(Math.random() * 16)]
+        }
+        return color
+    }
+
+    let interivalId
+
+    const startColorChanging = ()=>{
+        if(!interivalId){
+            interivalId = setInterval(bgColor,1000)
+        }
+        function bgColor(){
+            document.body.style.backgroundColor = randomColor()   
+        }
+    }
+
+    const stopChanging = ()=>{
+        clearInterval(interivalId)
+    }
+
+    document.querySelector('#start').addEventListener('click', startColorChanging)
+    document.querySelector('#stop').addEventListener('click', stopChanging)
+</script>
+</html>
