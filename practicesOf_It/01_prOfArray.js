@@ -20,16 +20,16 @@
 // console.log(newArr);
 // console.log(typeof newArr);
 
-const arr = []
-console.log(typeof arr);
-const arr2 = new Array(8,4,33,3)
-console.log(typeof arr2)
+// const arr = []
+// console.log(typeof arr);
+// const arr2 = new Array(8,4,33,3)
+// console.log(typeof arr2)
 
-let fn = function(){
-    const numm = arr2.map((num) => num * 19)
+// let fn = function(){
+//     const numm = arr2.map((num) => num * 19)
     
-    console.log(numm, typeof numm);
-}
+//     console.log(numm, typeof numm);
+// }
 
-fn()
-console.log(typeof numm)
+// fn()
+// console.log(typeof numm)
