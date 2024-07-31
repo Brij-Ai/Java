@@ -25,7 +25,9 @@
     let interivalId
 
     const startColorChanging = ()=>{
-        interivalId = setInterval(bgColor,1000)
+        if(!interivalId){
+            interivalId = setInterval(bgColor,1000)
+        }
         function bgColor(){
             document.body.style.backgroundColor = randomColor()   
         }
