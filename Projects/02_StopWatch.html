@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+    <style>
+        *{
+            background-color: rgb(80, 37, 80);
+            color: aliceblue;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .stopwatch{
+            text-align: center;
+            margin: 50px auto;
+            background-color: rgb(140, 184, 181);
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 3px 7px 5px rgb(6, 220, 209);
+            color: rgb(89, 26, 96);
+            font-weight: 400;
+        }
+        
+        #display{
+            font-size: 36px;
+        }
+        .container{
+            /* display: grid;
+            place-items:center; */
+            /* display: flex; */
+            margin-left: 350px;
+            margin-top: 10%;
+            padding-left: 300px;
+            align-items: center;
+            justify-content: center;
+            display: inline-block;
+        }
+        button{
+            margin: 10px;
+            padding: 10px 10px;
+            font-size: 18px;
+            box-shadow: 3px 7px 5px rgb(6, 220, 209);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="stopwatch" id="display">
+            00:00:00
+        </div>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+    </div>
+    
+</body>
+<script>
+    const display = document.getElementById('display')
+    const startButton = document.getElementById('start')
+    const stopButton = document.getElementById('stop')
+    const resetButton = document.getElementById('reset')
+    let startTime = 0 
+    let elapsedTime = 0 
+    let interivalId
+    function startTimer(){
+        startTime = Date.now()
+        interivalId = setInterval(updateTime, 10) 
+    } 
+    function resetTimer(){
+        clearInterval(interivalId)
+        startTime = 0
+        elapsedTime = 0
+        display.textContent = '00:00:00'
+    }
+    function stoptTimer(){
+        clearInterval(interivalId)
+        elapsedTime += Date.now() - startTime
+    }
+    function updateTime(){
+        elapsedTime += Date.now() - startTime
+        startTime = Date.now()
+        const seconds = Math.floor((elapsedTime / 1000) % 60)
+        const minutes = Math.floor((elapsedTime / (1000 * 60 )) % 60)
+        const hours = Math.floor(elapsedTime / (1000 * 60 * 60))
+        const formatedTime = `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`
+        display.innerHTML = formatedTime
+    }
+    startButton.addEventListener('click',startTimer)
+    stopButton.addEventListener('click',stoptTimer)
+    resetButton.addEventListener('click',resetTimer)
+</script>
+</html>
