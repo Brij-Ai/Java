@@ -21,7 +21,7 @@
             background-color: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px;
+            box-shadow: 03px 5px 10px orange;
             text-align: center;
         }
         h1{
@@ -40,6 +40,7 @@
             border-radius: 5px;
             color: white;
             cursor: pointer;
+            box-shadow: 3px 5px 5px greenyellow ;
         }
         button:hover{
             background-color: rgb(53, 70, 37);
@@ -47,6 +48,8 @@
         .result{
             margin-top: 20px;
             font-size: 1.3 em;
+            box-shadow: 3px 3px 4px green;
+            border-radius: 3px;
         }
     </style>
 </head>
@@ -56,7 +59,7 @@
         <div class="date-inputs">
             <label for="date1">Start Date:</label>
             <input type="date" id="date1">
-            <label for="date2">End date</label>
+            <label for="date2">End date:</label>
             <input type="date" id="date2">
         </div>
         <button onclick="calculateDifference()">calculateDifference</button>
