@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2DAY</title>
+    <style>
+        *{
+            background-color: rgb(63, 87, 99);
+            align-items: center;
+        }
+        .container{
+            height: 560px;
+            display: grid;
+            place-items: center;
+        }
+        #day{
+            background-color: rgb(36, 37, 36);
+            color: aliceblue;
+            width: 160px;
+            height: 40px;
+            box-shadow: 3px 3px 3px greenyellow;
+            margin: 20px;
+            border-radius: 4px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="day"></p>
+    </div>
+</body>
+<script>
+    const myDate = () =>{
+        let date = new Date()
+        return`Date : ${date.toDateString()} Time : ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    }
+    const day = document.getElementById('day')
+    day.innerText = myDate()
+</script>
+</html>
